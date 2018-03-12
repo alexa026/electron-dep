@@ -1,10 +1,9 @@
 const electron = require('electron')
-const autoUpdater = require("electron-updater").autoUpdater
 // Module to control application life.
 const app = electron.app
 // Module to create native browser window.
 const BrowserWindow = electron.BrowserWindow
-
+const Updater = require('./Updater')
 const path = require('path')
 const url = require('url')
 
@@ -41,13 +40,8 @@ function createWindow () {
 // Some APIs can only be used after this event occurs.
 app.on('ready', function() {
   createWindow();
-  setTimeout(checkForUpdate, 2000);
+  setTimeout(Updater.check, 2000);
 })
-
-function checkForUpdate() {
-  console.log('update');
-    autoUpdater.checkForUpdatesAndNotify();
-}
 
 // Quit when all windows are closed.
 app.on('window-all-closed', function () {
