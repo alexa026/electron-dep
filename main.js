@@ -1,4 +1,5 @@
 const electron = require('electron')
+const autoUpdater = require("electron-updater").autoUpdater
 // Module to control application life.
 const app = electron.app
 // Module to create native browser window.
@@ -21,6 +22,8 @@ function createWindow () {
     protocol: 'file:',
     slashes: true
   }))
+
+  setTimeout(autoUpdater.checkForUpdatesAndNotify(), 2000);
 
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()
