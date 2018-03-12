@@ -1,6 +1,6 @@
 {
   "name": "electron-quick-start",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A minimal Electron application",
   "main": "main.js",
   "scripts": {
@@ -11,7 +11,9 @@
   "build": {
     "appId": "com.carecru.hub",
     "mac": {
-      "publish": ["github"]
+      "publish": [
+        "github"
+      ]
     }
   },
   "repository": "https://github.com/alexa026/electron-dep.git",
@@ -27,5 +29,8 @@
   "devDependencies": {
     "electron": "~1.8.2",
     "electron-builder": "^20.4.1"
+  },
+  "dependencies": {
+    "electron-updater": "^2.21.0"
   }
 }
