@@ -41,8 +41,13 @@ function createWindow () {
 // Some APIs can only be used after this event occurs.
 app.on('ready', function() {
   createWindow();
-  autoUpdater.checkForUpdatesAndNotify()
+  setTimeout(checkForUpdate, 2000);
 })
+
+function checkForUpdate() {
+  console.log('update');
+    autoUpdater.checkForUpdatesAndNotify();
+}
 
 // Quit when all windows are closed.
 app.on('window-all-closed', function () {
