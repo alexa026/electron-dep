@@ -1,14 +1,18 @@
 {
   "name": "electron-quick-start",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A minimal Electron application",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "build-mac": "electron-builder -m"
+    "build-mac": "electron-builder -m",
+    "publish-app": "electron-builder build -m -p 'onTagOrDraft'"
   },
   "build": {
-    "appId": "com.carecru.hub"
+    "appId": "com.carecru.hub",
+    "mac": {
+      "publish": ["github"]
+    }
   },
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [
