@@ -1,10 +1,14 @@
 {
   "name": "electron-quick-start",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "A minimal Electron application",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "build-mac": "electron-builder -m"
+  },
+  "build": {
+    "appId": "com.carecru.hub"
   },
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [
@@ -17,6 +21,7 @@
   "author": "GitHub",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "~1.7.8"
+    "electron": "~1.8.2",
+    "electron-builder": "^20.4.1"
   }
 }
